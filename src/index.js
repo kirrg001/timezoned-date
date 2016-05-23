@@ -59,7 +59,7 @@ function makeConstructor(boundOffset = -new NativeDate().getTimezoneOffset()) {
         }
 
         if (!inited) {
-            var string = args[0].toString(),
+            var string = args[0] ? args[0].toString() : null,
                 date = new NativeDate(string),
                 isYYYYmmdd = YYYY_MM_DD.test(string),
                 isOffsetSpecified = OFFSET_SUFFIX.test(string),
